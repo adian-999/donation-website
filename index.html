@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- daisyui -->
+     
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script src="https://kit.fontawesome.com/f9cc66ac31.js" crossorigin="anonymous"></script>
+
+    <title>Donation Website</title>
+</head>
+<body class="max-w-screen-2xl mx-auto  ">
+    
+   <div class="fixed top-0 left-0 w-full backdrop-blur-md p-4  ">
+    <nav class=" grid grid-cols-2   lg:flex justify-between  mx-16">
+        <button id="blog" class="btn btn-warning font-bold px-7 text-xl w-1/2 lg:w-24">Blog</button>
+
+        <button id="home" class="btn btn-warning font-bold px-7 text-xl w-1/2 lg:w-24 hidden">Home</button>
+
+
+        <div class="flex gap-4 items-center text-xl font-bold">
+            <img src="assets/logo.png" alt="">
+            <p>Donate Bangladesh</p>
+        </div>
+
+        <div class="flex gap-2 text-xl font-bold items-center">
+            <img src="assets/coin.png" alt="">
+            <div class="main-balance" id="main-balance">9000</div>
+            <p>BDT</p>
+        </div>
+    </nav>
+    <section id="don-his" class="sec-1 flex justify-center gap-3 mt-24 mb-16 mr-16">
+        <button id="donation-tab" class="btn  font-bold px-7 text-2xl bg-lime-400 ">Donation</button>
+
+        <button id="history" class="btn  font-bold px-7 text-2xl">History</button>
+
+
+    </section>
+
+   </div>
+    
+    <main class="max-w-screen-xl mx-auto mb-24 mt-[330px]">
+
+
+        <div id="history-container" class="history text-center hidden">
+            <h3 class="text-2xl font-bold">Here is the donation history</h3>
+
+        </div>
+
+        <!-- blog part -->
+
+        <div id="faq" class="hidden">
+
+            <div class="flex gap-2 items-center mb-12">
+                <h2 class="text-3xl font-bold ">Important FAQ</h2>
+                <i class="fa-solid fa-fire text-5xl"></i>
+            </div>
+
+
+            <div class="collapse collapse-arrow bg-base-200">
+                <input type="radio" name="my-accordion-2" checked="checked" />
+                <div class="collapse-title text-xl font-medium">What is the Document Object Model (DOM)?</div>
+                <div class="collapse-content">
+                  <p>The Document Object Model (DOM) is a programming interface used for web documents. It represents a webpage (HTML or XML) as a structured, hierarchical tree of objects that can be manipulated with programming languages like JavaScript. Each part of the document (elements, attributes, text) is represented as an object that can be accessed, changed, or deleted. This allows developers to interact with and modify the content, structure, and style of a web page dynamically.</p>
+                </div>
+              </div>
+              <div class="collapse collapse-arrow bg-base-200">
+                <input type="radio" name="my-accordion-2" />
+                <div class="collapse-title text-xl font-medium">How do you select an element from the DOM?</div>
+                <div class="collapse-content">
+                  <p>To select elements from the DOM, several JavaScript methods are commonly used depending on how you want to target the elements (by id, class, tag, or other selectors).</p>
+                </div>
+              </div>
+              <div class="collapse collapse-arrow bg-base-200">
+                <input type="radio" name="my-accordion-2" />
+                <div class="collapse-title text-xl font-medium">What is event delegation in the context of the DOM. and why it is useful?</div>
+                <div class="collapse-content">
+                  <p>Event delegation is a technique in the DOM that allows you to handle events more efficiently by attaching a single event listener to a parent element instead of multiple event listeners to individual child elements. This parent element can then capture events triggered by its child elements by taking advantage of event bubbling.</p>
+                </div>
+              </div>
+
+              <div class="collapse collapse-arrow bg-base-200">
+                <input type="radio" name="my-accordion-2" checked="checked" />
+                <div class="collapse-title text-xl font-medium">How do you manipulate an element's attributes and style using the DOM?</div>
+                <div class="collapse-content">
+                  <p>To manipulate an element’s attributes and styles in the DOM:
+
+                    Attributes:
+                    Get: element.getAttribute("attributeName")
+                    Set: element.setAttribute("attributeName", "value")
+                    Remove: element.removeAttribute("attributeName")
+                    Direct Property Access: element.id, element.className, etc.
+                    Styles:
+                    Set Style: element.style.property = "value" (e.g., element.style.color = "red")
+                    Remove Style: element.style.property = ""
+                    Manipulate Class: element.classList.add("className"), element.classList.remove("className"), element.classList.toggle("className")
+                    These methods allow you to dynamically modify elements in real-time on the page.</p>
+                </div>
+              </div>
+             
+              
+        </div>
+
+
+
+      <!-- modal -->
+
+      <!-- Open the modal using ID.showModal() method -->
+    <!-- <button class="btn" onclick="my_modal_1.showModal()">open modal</button> -->
+   <dialog id="my_modal_1" class="modal">
+     <div class="modal-box">
+    <h3 class="text-lg font-bold">Congratulations.</h3>
+    <p class="py-4">Congratulations. Successfully Donated</p>
+    <img src="assets/logo.png" alt="">
+    <div class="modal-action">
+      <form method="dialog">
+        <!-- if there is a button in form, it will close the modal -->
+        <button class="btn">Close</button>
+      </form>
+    </div>
+  </div>
+</dialog>
+        
+        <div id="container" class="card-container border p-16 rounded-2xl">
+            <!-- card-1 -->
+
+        <section class="card-1 grid grid-cols-1 lg:grid-cols-2 gap-16  max-w-screen-lg   ">
+            <div>
+                <img src="assets/noakhali.png" alt="">
+            </div>
+
+            <div>
+                <div class="flex gap-2 text-xl font-bold items-center mb-2">
+                    <img src="assets/coin.png" alt="">
+                    <div id="donated-noa">100</div>
+                    <p>BDT</p>
+                </div>
+
+                <h3 class="text-xl font-bold">Donate for Flood at Noakhali, Bangladesh</h3>
+                <br>
+
+               
+
+                <p class="text-gray-500">
+                    The recent floods in Noakhali have caused significant damage to homes  infrastructure. Your donation will help provide essential supplies and  to those affected by this disaster. Every contribution, big or small, makes  difference. Please join us in supporting the relief efforts and making a positive impact on the lives of those in need. 
+                </p>
+                <br>
+
+                <input id="donate-noa" class="bg-orange-100 px-24 py-4 rounded-md" type="text" placeholder="Write Donate Amount">
+                <br><br>
+                <button id="donate-now-1" class="btn btn-warning font-bold px-7 text-xl w-full " onclick="my_modal_1.showModal()">Donate Now</button>
+
+
+
+
+            </div>
+
+
+        </section>
+        <!-- card-2 -->
+         
+        <section class="card-2 grid grid-cols-1 lg:grid-cols-2 gap-16  max-w-screen-lg  mt-24">
+            <div>
+                <img src="assets/feni.png" alt="">
+            </div>
+
+            <div>
+                <div class="flex gap-2 text-xl font-bold items-center mb-2">
+                    <img src="assets/coin.png" alt="">
+                    <div id="donated-feni">100</div>
+                    <p>BDT</p>
+                </div>
+
+                <h3 class="text-xl font-bold">Donate for Flood Relief in Feni,Bangladesh</h3>
+                <br>
+
+                <p class="text-gray-500">
+                    The recent floods in Feni have devastated local communities, leading to severe disruption and loss. Your generous donation will help provide immediate aid, including food, clean water, and medical supplies, to those affected by this calamity. Together, we can offer crucial support and help rebuild lives in the aftermath of this disaster. Every contribution counts towards making a real difference. Please consider donating today to assist those in urgent need. 
+                </p>
+                <br>
+
+                <input id="donate-feni" class="bg-orange-100 px-24 py-4 rounded-md" type="text" placeholder="Write Donate Amount">
+                <br><br>
+                <button id="donate-now-2" class="btn btn-warning font-bold px-7 text-xl w-full" onclick="my_modal_1.showModal()">Donate Now</button>
+
+
+
+
+            </div>
+
+
+        </section>
+        <!-- card-3 -->
+        <section class="card-2 grid grid-cols-1 lg:grid-cols-2 gap-16  max-w-screen-lg  mt-24">
+            <div>
+                <img src="assets/quota-protest.png" alt="">
+            </div>
+
+            <div>
+                <div class="flex gap-2 text-xl font-bold items-center mb-2">
+                    <img src="assets/coin.png" alt="">
+                    <div id="donated-aid">100</div>
+                    <p>BDT</p>
+                </div>
+
+                <h3 class="text-xl font-bold">Aid for Injured in the Quota Movement</h3>
+                <br>
+
+                <p class="text-gray-500">
+                    The recent Quota movement has resulted in numerous injuries and significant hardship for many individuals. Your support is crucial in providing medical assistance, rehabilitation, and necessary supplies to those affected. By contributing, you help ensure that injured individuals receive the care and support they need during this challenging time. Every donation plays a vital role in alleviating their suffering and aiding in their recovery. Please consider making a donation to support these brave individuals in their time of need. 
+                </p>
+                <br>
+
+                <input id="donate-aid" class="bg-orange-100 px-24 py-4 rounded-md" type="text" placeholder="Write Donate Amount">
+                <br><br>
+                <button id="donate-now-3" class="btn btn-warning font-bold px-7 text-xl w-full" onclick="my_modal_1.showModal()">Donate Now</button>
+
+
+
+
+            </div>
+
+
+        </section>
+        </div>
+    </main>
+    <script src="donate.js"></script>
+</body>
+</html>
