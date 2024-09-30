@@ -178,10 +178,12 @@ document.getElementById('home').addEventListener('click',function(){
     document.getElementById('faq').classList.add('hidden');
     document.getElementById('home').classList.add('hidden');
     document.getElementById('blog').classList.remove('hidden');
+    document.getElementById('history-container').classList.add('hidden');
 
 
 
 })
+
 
 
 
